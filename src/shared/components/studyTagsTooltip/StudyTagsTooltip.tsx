@@ -88,11 +88,6 @@ class StudyInfoOverlay extends React.Component<
         if (this.props.isVirtualStudy) {
             overlay = (
                 <div
-                    style={{
-                        maxWidth: 250,
-                        maxHeight: 300,
-                        overflow: 'scroll',
-                    }}
                     dangerouslySetInnerHTML={addHTMLDescription(
                         this.props.studyDescription
                     )}
@@ -106,11 +101,6 @@ class StudyInfoOverlay extends React.Component<
                     .length;
                 const description = (
                     <div
-                        style={{
-                            maxWidth: 250,
-                            maxHeight: 300,
-                            overflow: 'scroll',
-                        }}
                         dangerouslySetInnerHTML={addHTMLDescription(
                             this.props.studyDescription
                         )}
@@ -143,11 +133,6 @@ class StudyInfoOverlay extends React.Component<
                         ServerConfigDefaults.skin_home_page_unauthorized_studies_global_message
                     ) : (
                         <div
-                            style={{
-                                maxWidth: 250,
-                                maxHeight: 300,
-                                overflow: 'scroll',
-                            }}
                             dangerouslySetInnerHTML={addHTMLDescription(
                                 message.toString()
                             )}
