@@ -268,7 +268,7 @@ export class MultiSelectionTable extends React.Component<
                         <TableHeaderCellFilterIcon
                             cellMargin={cellMargin}
                             dataTest="number-column-header"
-                            className={styles.displayFlex}
+                            className={`${styles.displayFlex} ${styles.pullRight}`}
                             showFilter={!!this.props.alterationFilterEnabled}
                             isFiltered={!!this.props.filterAlterations}
                         >
@@ -324,7 +324,11 @@ export class MultiSelectionTable extends React.Component<
                         data.numberOfAlteredCases,
                         data.matchingGenePanelIds || [],
                         this.toggleModal,
-                        { marginLeft: cellMargin }
+                        {
+                            marginLeft: cellMargin,
+                            flexDirection: 'row-reverse',
+                            display: 'flex',
+                        }
                     );
                 },
                 sortBy: (data: MultiSelectionTableRow) =>
@@ -357,9 +361,8 @@ export class MultiSelectionTable extends React.Component<
                 render: (data: MultiSelectionTableRow) => (
                     <span
                         data-test={'numberOfAlterations'}
+                        className={styles.pullRight}
                         style={{
-                            flexDirection: 'row-reverse',
-                            display: 'flex',
                             marginRight: cellMargin,
                         }}
                     >
@@ -392,10 +395,9 @@ export class MultiSelectionTable extends React.Component<
                     <span
                         data-test={'numberOfAlterations'}
                         style={{
-                            flexDirection: 'row-reverse',
-                            display: 'flex',
                             marginRight: cellMargin,
                         }}
+                        className={`${styles.pullRight}`}
                     >
                         {data.totalCount.toLocaleString()}
                     </span>

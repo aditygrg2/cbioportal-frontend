@@ -58,6 +58,7 @@ export default class StudyList extends QueryStoreComponent<
     componentDidMount() {
         // when rendering selected studies view,
         // cache the view object so studies do not disappear immediately when deselected.
+
         if (this.props.showSelectedStudiesOnly) this._view = this.view;
     }
 
