@@ -133,6 +133,7 @@ class StudyInfoOverlay extends React.Component<
                         ServerConfigDefaults.skin_home_page_unauthorized_studies_global_message
                     ) : (
                         <div
+                            style={{ maxWidth: 300 }}
                             dangerouslySetInnerHTML={addHTMLDescription(
                                 message.toString()
                             )}
