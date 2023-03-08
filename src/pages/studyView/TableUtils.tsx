@@ -13,6 +13,7 @@ import {
 } from 'pages/studyView/StudyViewUtils';
 import { GenePanelList } from 'pages/studyView/table/StudyViewGenePanelModal';
 import { CSSProperties } from 'react';
+import { CSSTransitionClassNames } from 'react-transition-group/CSSTransition';
 
 export function getGeneCNAOQL(hugoGeneSymbol: string, alteration: number) {
     return [hugoGeneSymbol, getCNAByAlteration(alteration)].join(':');
@@ -106,7 +107,8 @@ export function getFreqColumnRender(
     numberOfAlteredCases: number,
     matchingGenePanelIds: string[],
     toggleModal?: (panelName: string) => void,
-    style?: CSSProperties
+    style?: CSSProperties,
+    className?: string
 ) {
     let tooltipContent = '# of samples profiled';
     if (type !== 'data') {
@@ -131,7 +133,7 @@ export function getFreqColumnRender(
             overlay={addTotalProfiledOverlay}
             destroyTooltipOnHide={true}
         >
-            <span data-test="freq-cell" style={style}>
+            <span data-test="freq-cell" className={className} style={style}>
                 {getFrequencyStr(
                     (numberOfAlteredCases / numberOfProfiledCases) * 100
                 )}

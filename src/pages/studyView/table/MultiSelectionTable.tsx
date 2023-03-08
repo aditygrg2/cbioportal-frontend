@@ -326,9 +326,8 @@ export class MultiSelectionTable extends React.Component<
                         this.toggleModal,
                         {
                             marginLeft: cellMargin,
-                            flexDirection: 'row-reverse',
-                            display: 'flex',
-                        }
+                        },
+                        styles.pullRight
                     );
                 },
                 sortBy: (data: MultiSelectionTableRow) =>
