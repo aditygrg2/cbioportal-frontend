@@ -166,14 +166,6 @@ export default class GroupComparisonStore extends ComparisonStore {
                     .map(study => study.id)
                     .uniq()
                     .value();
-                trackEvent({
-                    category: 'groupComparison',
-                    action: 'comparisonSessionViewed',
-                    label: studies.join(',') + ',',
-                    fieldsObject: {
-                        [GACustomFieldsEnum.GroupCount]: data.groups.length,
-                    },
-                });
             } catch (ex) {
                 throw 'Failure to track comparisonSessionViewed';
             }
@@ -325,14 +317,14 @@ export default class GroupComparisonStore extends ComparisonStore {
 
     public readonly groupToProfiledPatients = remoteData({
         await: () => [
-            this._originalGroups,
+            this.activeGroups,
             this.sampleMap,
             this.mutationEnrichmentProfiles,
             this.coverageInformation,
         ],
         invoke: () => {
             const sampleSet = this.sampleMap.result!;
-            const groups = this._originalGroups.result!;
+            const groups = this.activeGroups.result!;
             const ret: {
                 [groupUid: string]: string[];
             } = {};

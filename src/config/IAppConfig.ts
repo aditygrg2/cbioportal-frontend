@@ -42,6 +42,7 @@ export interface IServerConfig {
     oncoprint_custom_driver_annotation_binary_menu_label: string | null; // default:
     disabled_tabs: string | null;
     custom_tabs: any[];
+    custom_js_urls: string; // comma delimited string
     oncoprint_custom_driver_annotation_binary_default: boolean;
     oncoprint_custom_driver_annotation_tiers_default: boolean;
     oncoprint_oncokb_default: boolean;
@@ -104,6 +105,7 @@ export interface IServerConfig {
     skin_right_nav_show_testimonials: boolean;
     skin_right_nav_show_whats_new: boolean;
     skin_right_nav_show_twitter: boolean;
+    skin_right_nav_show_web_tours: boolean;
     skin_right_nav_whats_new_blurb: string | null;
     skin_show_about_tab: boolean;
     skin_show_data_tab: boolean;
@@ -166,9 +168,13 @@ export interface IServerConfig {
     skin_comparison_view_mutation_table_columns_show_on_init: string;
     skin_patient_view_copy_number_table_columns_show_on_init: string;
     skin_patient_view_structural_variant_table_columns_show_on_init: string;
+    skin_patient_view_custom_sample_type_colors_json: string;
     comparison_categorical_na_values: string;
     oncoprint_clinical_tracks_config_json: string;
+    oncoprint_clustered_default: boolean; // this has a default
     enable_cross_study_expression: string;
     studyview_max_samples_selected: number;
     study_download_url: string;
+    vaf_sequential_mode_default: boolean; // this has a default
+    vaf_log_scale_default: boolean; // this has a default
 }

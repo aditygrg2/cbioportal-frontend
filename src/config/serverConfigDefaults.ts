@@ -28,8 +28,8 @@ export const ServerConfigDefaults: Partial<IServerConfig> = {
         'https://mygene.info/v3/gene/<%= entrezGeneId %>?fields=uniprot',
 
     oncoprint_custom_driver_annotation_binary_menu_label:
-        'Custom driver annotation',
-    oncoprint_custom_driver_annotation_tiers_menu_label: 'Custom driver tiers',
+        'Custom driver annotations',
+    oncoprint_custom_driver_annotation_tiers_menu_label: 'Driver tiers',
     oncoprint_custom_driver_annotation_binary_default: true,
     oncoprint_custom_driver_annotation_tiers_default: true,
     oncoprint_oncokb_default: true,
@@ -75,6 +75,7 @@ export const ServerConfigDefaults: Partial<IServerConfig> = {
     skin_right_nav_show_examples: true,
     skin_right_nav_show_testimonials: true,
     skin_right_nav_show_whats_new: true,
+    skin_right_nav_show_web_tours: false,
     skin_right_nav_show_twitter: false,
     skin_citation_rule_text:
         'Please cite: <a href="http://cancerdiscovery.aacrjournals.org/content/2/5/401.abstract" target="_blank">Cerami et al., 2012</a> &amp; <a href="http://www.ncbi.nlm.nih.gov/pubmed/23550210" target="_blank">Gao et al., 2013</a>',
@@ -216,9 +217,17 @@ export const ServerConfigDefaults: Partial<IServerConfig> = {
 
     skin_patient_view_structural_variant_table_columns_show_on_init: '',
 
+    skin_patient_view_custom_sample_type_colors_json: '',
+
     studyview_max_samples_selected: 0,
 
     study_download_url: '',
+
+    oncoprint_clustered_default: true,
+
+    vaf_sequential_mode_default: false,
+
+    vaf_log_scale_default: false,
 };
 
 export default ServerConfigDefaults;
